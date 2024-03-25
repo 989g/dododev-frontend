@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { azureConfig } from './azure.config';
 import { MsalProvider } from '@azure/msal-react';
 import { Configuration, PublicClientApplication } from '@azure/msal-browser';
 
@@ -9,7 +10,7 @@ import { App } from './App';
 // MSAL configuration
 const configuration: Configuration = {
   auth: {
-    clientId: 'abc',
+    clientId: azureConfig.clientId!,
   },
 };
 
