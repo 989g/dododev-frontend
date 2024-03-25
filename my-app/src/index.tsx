@@ -1,14 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import { MsalProvider } from '@azure/msal-react';
+import { Configuration, PublicClientApplication } from '@azure/msal-browser';
 
-root.render(
-  <React.StrictMode>
+import { App } from './App';
+
+// MSAL configuration
+const configuration: Configuration = {
+  auth: {
+    clientId: 'abc',
+  },
+};
+
+const pca = new PublicClientApplication(configuration);
+
+// Component
+const AppProvider = () => (
+  <MsalProvider instance={pca}>
     <App />
-  </React.StrictMode>
+  </MsalProvider>
 );
+
+ReactDOM.render(<AppProvider />, document.getElementById('root'));
