@@ -5,7 +5,8 @@ import { azureConfig } from './azure.config';
 import { MsalProvider } from '@azure/msal-react';
 import { Configuration, PublicClientApplication } from '@azure/msal-browser';
 
-import { App } from './App';
+import { AzureLogin } from './components/AzureLogin';
+import './index.css';
 
 // MSAL configuration
 const configuration: Configuration = {
@@ -19,7 +20,7 @@ const pca = new PublicClientApplication(configuration);
 // Component
 const AppProvider = () => (
   <MsalProvider instance={pca}>
-    <App />
+    <AzureLogin />
   </MsalProvider>
 );
 
