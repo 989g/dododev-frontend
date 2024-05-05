@@ -4,11 +4,7 @@
 
 For a demonstration of how to integrate React with Tailwind CSS, you can check out the following example project:
 
-- https://github.com/duxianwei520/react
-
-## Example Project
-
-https://github.com/duxianwei520/react
+[duxianwei520/react](https://github.com/duxianwei520/react)
 
 ## Start with react typescript
 
